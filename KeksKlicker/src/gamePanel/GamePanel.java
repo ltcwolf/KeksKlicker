@@ -1,5 +1,6 @@
 package gamePanel;
 
+import java.awt.Image;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +11,10 @@ import javax.swing.border.EmptyBorder;
 public class GamePanel {
 	
 	static int Counter = 0;
+
+	
+
+
 
 	public static void main(String[] args) {
 		
@@ -25,7 +30,7 @@ public class GamePanel {
 	 
 	 //Geklickte Cookies anzeigen!
 	 TextField cookies = new TextField();
-	 cookies.setText(Counter + "");
+	 cookies.setText(Counter + " Cookies");
 	 cookies.setEditable(false);
 	 cookies.setVisible(true);
 	 cookies.setBounds(200,50,100,100);
@@ -41,13 +46,16 @@ public class GamePanel {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			Counter +=1;
-			cookies.setText(Counter + "");
+			cookies.setText(Counter + " Cookies");
 			if(Counter > 10) {
-				System.out.println("Spieler hat Counter 1 erfüllt!");
+				
 			}
 		}
 		 
 	 });
+	 
+	 Image CUKIE = new ImageIcon(GamePanel.class.getResource("/COOOOKIE.png")).getImage();
+	 Cookie1.setIcon(new ImageIcon(CUKIE));
 	 mainlabel.add(Cookie1);
 	 
 	 
